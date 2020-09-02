@@ -1,4 +1,3 @@
 from django.shortcuts import render
 
-def index():
-    return 0
+# Create your views here.
