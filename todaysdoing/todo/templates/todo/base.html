@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+    <head>
+        <title>TODO List</title>
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="/"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+                <a href="{% url 'today_menu' %}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a>
+                <a href="{% url 'plans' %}"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span></a>
+                <a href="{% url 'log' %}"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span></a>
+                <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+                {% endif %}
+            <h1><a href="/">TODO List</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

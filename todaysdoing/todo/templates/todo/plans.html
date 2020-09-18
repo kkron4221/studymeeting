@@ -1,0 +1,19 @@
+{% extends "todo/base.html" %}
+{% block content %}
+
+
+
+<h1>明日の予定</h1>
+<form action="{% url 'todo:plan_date' %", method="post">
+ {% csrf_token %}
+<input type="search" name="search1" placeholder="やること"><br>
+<input type="search" name="search2" placeholder="やること"><br>
+<input type="search" name="search3" placeholder="やること"><br>
+<input type="search" name="search4" placeholder="やること"><br>
+<input type="search" name="search5" placeholder="やること"><br>
+<input type="search" name="search6" placeholder="やること"><br>
+<input type="submit" name="submit" value="決定">
+
+
+</form>
+{% endblock %}
