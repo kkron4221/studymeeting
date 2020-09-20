@@ -4,6 +4,7 @@
 
 
 <h1>明日の予定</h1>
+{{ mes }}
 <form action="{% url 'todo:plan_date' %", method="post">
  {% csrf_token %}
 <input type="search" name="search1" placeholder="やること"><br>
